@@ -14,8 +14,9 @@ reference to diff against.
 SETUP (on your rented GPU box; a single RTX 4090 is plenty):
 
     python -m venv .venv && source .venv/bin/activate
-    pip install "torch>=2.3" "transformers>=4.48,<4.52" "trl>=0.14,<0.16" \
+    pip install "torch>=2.3" "transformers>=4.48" "trl>=0.16,<0.21" \
                 "datasets>=2.19" "peft>=0.11" "accelerate>=0.30" wandb
+    # NOTE: trl must be >=0.16 -- GRPOConfig.scale_rewards does not exist before that.
 
     # optional but recommended for fast generation:
     pip install "vllm>=0.6"     # then pass --use_vllm

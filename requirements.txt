@@ -1,0 +1,14 @@
+# GPU box (training + eval)
+torch>=2.3
+transformers>=4.48
+# scale_rewards was added to GRPOConfig in trl 0.16 (bool). <0.21 because later
+# versions move it to a string enum ("group"/"batch"/"none") -- revisit before bumping.
+trl>=0.16,<0.21
+datasets>=2.19
+peft>=0.11
+accelerate>=0.30
+wandb
+sympy            # symbolic grader for MATH-500
+matplotlib       # analyze.py figures
+# optional, recommended for fast generation:
+# vllm>=0.6
